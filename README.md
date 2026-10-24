@@ -34,6 +34,12 @@ You need Python 3.10+ and the College Scorecard download.
 Each phase only reads the CSV the previous one wrote, so once `data/results.csv`
 exists you can work on the app without rerunning the models.
 
+For the separate student input/results flow, run:
+
+```bash
+.venv/bin/streamlit run app/student_app.py
+```
+
 ## Project layout
 
 ```
@@ -94,10 +100,14 @@ debt and low net price.
   matches prediction (89.5%); earnings $4.4k below prediction.
 
 **The app (`app/`).** Weight sliders re-rank all 1,405 schools live, compared with a
-prestige-only rank. A fragility check reruns the ranking 500 times with each weight
-nudged ±20% and shows how much the top 20 reshuffles. The app also has a prestige
-vs. outcomes scatter (BU highlighted, any school selectable), an overperformers
-table, a US map, and a limitations page.
+prestige-only rank. Students can separately prioritize published tuition and fees,
+average net price, and median debt; optional maximum-price filters narrow the school
+list. These school-level figures are not personalized aid estimates, and the dataset
+does not include individual aid eligibility, grant offers, housing, books, or travel
+costs. A fragility check reruns the ranking 500 times with each weight nudged ±20%
+and shows how much the top 20 reshuffles. The app also has a prestige vs. outcomes
+scatter (BU highlighted, any school selectable), an overperformers table, a US map,
+and a limitations page.
 
 ## Ethics & limitations
 

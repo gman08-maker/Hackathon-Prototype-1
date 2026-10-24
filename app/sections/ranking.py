@@ -14,6 +14,7 @@ COLUMNS = {
     "control_label": "Type",
     "score": st.column_config.ProgressColumn("Score", min_value=0, max_value=100, format="%.0f"),
     "net_price": st.column_config.NumberColumn("Net price ($)", format="localized"),
+    "sticker_price": st.column_config.NumberColumn("Published tuition & fees ($)", format="localized"),
     "grad_pct": st.column_config.NumberColumn("Grad rate", format="%.0f%%"),
     "pell_grad_pct": st.column_config.NumberColumn("Pell grad rate", format="%.0f%%"),
     "earnings_10yr": st.column_config.NumberColumn("Earnings ($)", format="localized"),

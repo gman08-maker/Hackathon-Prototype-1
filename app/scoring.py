@@ -14,6 +14,7 @@ import pandas as pd
 # key -> (column in results.csv, True if higher is better, label for the UI)
 CRITERIA = {
     "affordability": ("net_price", False, "Affordability (low net price)"),
+    "tuition": ("sticker_price", False, "Lower published tuition & fees"),
     "earnings": ("earnings_10yr", True, "Earnings 10 years out"),
     "graduation": ("grad_rate", True, "Graduation rate"),
     "low_debt": ("median_debt", False, "Low student debt"),
@@ -23,10 +24,11 @@ CRITERIA = {
 
 # Starting points for the weight sliders (0 = ignore, 10 = very important)
 PRESETS = {
-    "Student outcomes": {"affordability": 6, "earnings": 6, "graduation": 6,
+    "Student outcomes": {"affordability": 6, "tuition": 4, "earnings": 6, "graduation": 6,
                          "low_debt": 4, "mobility": 8, "prestige": 0},
-    "Prestige only (like many rankings)": {"affordability": 0, "earnings": 0, "graduation": 0,
-                                           "low_debt": 0, "mobility": 0, "prestige": 10},
+    "Prestige only (like many rankings)": {"affordability": 0, "tuition": 0, "earnings": 0,
+                                           "graduation": 0, "low_debt": 0, "mobility": 0,
+                                           "prestige": 10},
     "Equal weights": {key: 5 for key in CRITERIA},
 }
 

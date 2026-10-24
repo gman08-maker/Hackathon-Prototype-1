@@ -21,6 +21,11 @@ ABOUT = f"""
 
 - **Score:** each measure becomes a percentile (0 = worst school, 100 = best). Your
   weights average those percentiles. A missing value counts as the 50th percentile.
+- **Financial fit:** you can weigh published tuition and fees, average net price, and
+  median debt separately, or apply optional maximum-price filters. These are
+  institution-level figures, not a student's expected bill or financial-aid offer.
+  Aid eligibility, grant amounts, housing, books, transportation and personal budget
+  are not available in this dataset.
 - **Overperformers:** a random forest predicts graduation rate and earnings from
   student and resource inputs. Every prediction comes from a model that did not see
   that school (5-fold cross-validation). Actual minus predicted = overperformance.
